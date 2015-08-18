@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A243d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <scenes>
+        <!--Drop It View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DropItViewController" customModule="Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljZ-us-Kwe" customClass="BezierPathsView" customModule="Animation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iDf-K6-5IV" appends="YES" id="XxP-1r-ZU1"/>
+                                    <outletCollection property="gestureRecognizers" destination="zRU-3O-RpL" appends="YES" id="2T5-eO-m8D"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ljZ-us-Kwe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IS0-Wc-Ydt"/>
+                            <constraint firstItem="ljZ-us-Kwe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bhn-dM-0jR"/>
+                            <constraint firstItem="ljZ-us-Kwe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="vyI-f3-5Xt"/>
+                            <constraint firstAttribute="trailing" secondItem="ljZ-us-Kwe" secondAttribute="trailing" id="zEn-GI-J8I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="ljZ-us-Kwe" id="vO0-T3-V9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="iDf-K6-5IV">
+                    <connections>
+                        <action selector="drop:" destination="BYZ-38-t0r" id="tn0-uT-iEY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="zRU-3O-RpL">
+                    <connections>
+                        <action selector="grabDrop:" destination="BYZ-38-t0r" id="eN5-vT-DZm"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="305" y="387"/>
+        </scene>
+    </scenes>
+</document>
